@@ -1,8 +1,25 @@
+#!/usr/bin/python
 #File IO program 
+import csv
 
-import csv with open 
+ID = raw_input("Enter an ID:")
 
-with open ("refugeedb.csv", newline='') as myDb:
-    reader = csv.reader(myDb)
+counter = 1
+position = None
+x = "ID Not Found."
+
+with open ("refugeedb.csv",'rb') as myDb:
+    reader = csv.reader(myDb, delimiter = ',')
     for row in reader:
-        print(row)
+       if ID == row[0]:
+           x = row
+           position = counter
+          
+    counter = counter + 1
+#print x 
+print position
+if x != "ID Not Found.":
+    print x
+
+
+   
