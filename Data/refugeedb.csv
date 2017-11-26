@@ -1,4 +1,4 @@
-ID, First Name, Last Name, Current Location, Health Status
-12345, Ayoub, El Hanchi, Montreal, OK
-09876, Affan, Jilani, BlocHacks, OK 
+ID, DOB, First Name, Last Name, Current Location, Health Status
+12345, 1997/10/10, Ayoub, El Hanchi, Montreal, OK
+09876, 1997/11/11, Affan, Jilani, BlocHacks, OK
 
