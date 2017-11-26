@@ -20,5 +20,3 @@ def IDgenerator(dob, fname, lname):
         
     return ID
     
-    
-print(IDgenerator("1999/01/02", "ayoub", "elhanchi"))
