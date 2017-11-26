@@ -1,0 +1,1 @@
+# Pictures get stored in this folder
