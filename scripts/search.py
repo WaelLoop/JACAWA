@@ -19,7 +19,7 @@ position = None
 #Accumulator
 x = "ID Not Found."
 #Reads through the csv file to find the refugee. 
-with open ("refugeedb.csv",'rb') as myDb:
+with open ("../data/refugeedb.csv",'rb') as myDb:
     reader = csv.reader(myDb, delimiter = ',')
     for row in reader:
        if ID == row[0]:
