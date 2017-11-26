@@ -9,7 +9,7 @@ def IDgenerator(dob, fname, lname):
     
     dob = dob.split("/")
         
-    dob[2] = dob[2][2:]
+    dob[0] = dob[0][2:]
     
     fname = list(fname)
     lname = list(lname)
@@ -21,4 +21,4 @@ def IDgenerator(dob, fname, lname):
     return ID
     
     
-print(IDgenerator("02/08/1997", "ayoub", "elhanchi"))
+print(IDgenerator("1997/08/02", "ayoub", "elhanchi"))

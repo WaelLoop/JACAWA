@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Login Form</title>
+  <title>Homepage</title>
   <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -12,26 +11,17 @@
 <body>
   <div class="form">
       <div class="tab-content">
-        <div id="admin_login">
-          <h1>Administrator Login</h1>
-          <form action="login.py" method="post">
-
-          <div class="field-wrap">
-            <label>
-              Administrator ID<span class="req">*</span>
-            </label>
-            <input type="admin_ID" name="username" required autocomplete="off"/>
-          </div>
-
-          <div class="field-wrap">
-            <label>
-              Password<span class="req">*</span>
-            </label>
-            <input type="password" name="password" required autocomplete="off"/>
-          </div>
-
-          <button type="submit" class="button button-block"/>Login</button>
-
+        <div id="homepage">
+          <h1>JACAWA Refugee Services</h1>
+            <p><center>
+              <font color="white">
+                Welcome to the JACAWA refugees services webapp! This app will keep
+                track of the wherabouts of as many refugees as possible, in order
+                to facilitate their journey to a safe new home.
+              </font>
+            </center></p>
+          <form action="./pages/admin_login.html" method="post">
+            <button type="submit" class="button button-block"/>Administrator Login</button>
           </form>
 
         </div>
