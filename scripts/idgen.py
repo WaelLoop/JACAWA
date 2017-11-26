@@ -19,10 +19,4 @@ def IDgenerator(dob, fname, lname):
     ID = dob[2] + dob[1] + dob[0] + str(ord(fname[0])-97) + str(ord(fname[1])-97) + str(ord(fname[2])-97) + str(ord(lname[0])-97) + str(ord(lname[1])-97) + str(ord(lname[2])-97)
         
     return ID
-<<<<<<< HEAD
     
-    
-print(IDgenerator("2000/01/01", "ayoub", "elhanchi"))
-=======
-    
->>>>>>> abda09b96ccac73abfc34c22bd276717e09b93d6
