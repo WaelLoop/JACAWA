@@ -15,7 +15,7 @@
         <div id="update">
           <h1>Update a Current Refugee's Information</h1>
 
-          <form action="register.py" method="post">
+          <form action="register.py" method="post" name="form">
 
           <div class="top-row">
             <div class="field-wrap">
@@ -56,20 +56,6 @@
 
           <div class="field-wrap">
             <label>
-              Current Location<span class="req">*</span>
-            </label>
-            <input type="text" name="location"  autocomplete="off"/>
-          </div>
-
-          <div class="field-wrap">
-            <label>
-              Destination<span class="req">*</span>
-            </label>
-            <input type="text" name="destination"  autocomplete="off"/>
-          </div>
-
-          <div class="field-wrap">
-            <label>
               Image Path<span class="req">*</span>
             </label>
             <input type="text" name="image"  autocomplete="off"/>
@@ -82,8 +68,22 @@
             <input type="text" name="health"  autocomplete="off"/>
           </div>
 
-          <button type="submit" class="button button-block"/>Update</button>
-
+          <button type="submit" onclick="isEmptyField()" class="button button-block"/>Update</button>
+          <script> 
+            function isEmptyField() {
+              var a=document.forms["form"]["fname"].value;
+              var b=document.forms["form"]["lname"].value;
+              var c=document.forms["form"]["DOB"].value;
+              var d=document.forms["form"]["phone"].value;
+              var e=document.forms["form"]["email"].value;
+              var f=document.forms["form"]["image"].value;
+              var g=document.forms["form"]["health"].value;
+        if (a==null || a=="",b==null || b=="",c==null || c=="",d==null || d=="",e==null || e=="",f==null || f=="",g==null || g=="")
+        {
+            alert("Please Fill All Required Field");
+            return false;
+        } </script>
+            }
           </form>
 
         </div>
