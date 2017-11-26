@@ -15,41 +15,75 @@
         <div id="current">
           <h1>Current Refugee Information</h1>
 
-          <form action="update.py" method="post">
+          <form action="../update_refugee.html" method="post">
 
           <div class="top-row">
             <div class="field-wrap">
               <label>
-                First Name<span class="req">*</span>
+                <span class="req"></span>
               </label>
-              <input type="text" required autocomplete="off" />
+              <input type="text" value = "{ID}" required autocomplete="off" />
+            </div>
+            <div class="field-wrap">
+              <label>
+                <span class="req"></span>
+              </label>
+              <input type="text" value = "{DOB}" required autocomplete="off"/>
             </div>
 
             <div class="field-wrap">
               <label>
-                Last Name<span class="req">*</span>
+                <span class="req"></span>
               </label>
-              <input type="text"required autocomplete="off"/>
+              <input type="text" value= "{fname}" required autocomplete="off"/>
+            </div>
+              
+            <div class="field-wrap">
+              <label>
+                <span class="req"></span>
+              </label>
+              <input type="text" value = "{lname}" required autocomplete="off"/>
             </div>
           </div>
-
+              
           <div class="field-wrap">
             <label>
-              Email Address<span class="req">*</span>
+              <span class="req"></span>
             </label>
-            <input type="email"required autocomplete="off"/>
+            <input type="email" value = "{phone}" required autocomplete="off"/>
           </div>
 
           <div class="field-wrap">
             <label>
-              Set A Password<span class="req">*</span>
+              <span class="req"></span>
             </label>
-            <input type="password"required autocomplete="off"/>
+            <input type="email" value= "{email}" required autocomplete="off"/>
+          </div>
+              
+          <div class="field-wrap">
+            <label>
+              <span class="req"></span>
+            </label>
+            <input type="email" value = "{location}" required autocomplete="off"/>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              <span class="req"></span>
+            </label>
+            <input type="email" value = "{dest}" required autocomplete="off"/>
+          </div>
+              
+          <div class="field-wrap">
+            <label>
+              <span class="req"></span>
+            </label>
+            <input type="email" value="HS" required autocomplete="off"/>
           </div>
 
           <button type="submit" name="update" class="button button-block"/>Update</button><br>
         </form>
-        <form action="continue.py" method="post">
+        <form action="../search.html" method="post">
           <button type="submit" name="continue" class="button button-block"/>Continue</button><br>
         </form>
 
