@@ -26,6 +26,8 @@ def IDgenerator(dob, fname, lname):
 
 form = cgi.FieldStorage()
 dob = form["DOB"].value
+fields = dob.split("/")
+year = fields[0]
 fname = form["fname"].value
 lname = form["lname"].value
 ID=IDgenerator(dob,fname,lname)
@@ -37,7 +39,7 @@ position = None
 #Accumulator
 x = "ID Not Found."
 #Reads through the csv file to find the refugee.
-with open ("./refugeedb.csv",'rb') as myDb:
+with open ("./%s.csv, year",'rb') as myDb:
     reader = csv.reader(myDb, delimiter = ',')
     for row in reader:
         if ID == row[0]:
