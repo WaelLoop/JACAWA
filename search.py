@@ -7,7 +7,11 @@ form = cgi.FieldStorage()
 dob = form.getvalue("DOB")
 year,month,day = dob.split("/")
 
+print year
+print month
+print day
 
+ID = dob
 #Counter is used to keep track of correct row.
 counter = 1 
 #Variable to track position.
