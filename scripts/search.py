@@ -2,13 +2,6 @@
 #File IO program
 import csv
 import cgi
-#!/usr/bin/python
-'''
-    Created on Nov 25, 2017
-    
-    @author: ayoub
-    '''
-
 def IDgenerator(dob, fname, lname):
     
     dob = dob.split("/")
@@ -26,27 +19,26 @@ def IDgenerator(dob, fname, lname):
 
 form = cgi.FieldStorage()
 dob = form["DOB"].value
-fields = dob.split("/")
-year = fields[0]
+year = dob.split("/")[0]
 fname = form["fname"].value
 lname = form["lname"].value
-ID=IDgenerator(dob,fname,lname)
 print "Content-Type:text/html\n\n"
+ID = IDgenerator(dob,fname,lname)
 #Counter is used to keep track of correct row.
 counter = 1
 #Variable to track position.
 position = None
 #Accumulator
 x = "ID Not Found."
-#Reads through the csv file to find the refugee.
 file_name = year + ".csv"
+#Reads through the csv file to find the refugee.
 with open (file_name,'rb') as myDb:
     reader = csv.reader(myDb, delimiter = ',')
     for row in reader:
         if ID == row[0]:
             x = row
-            position = counter
-            counter = counter + 1
+                position = counter
+        counter = counter + 1
 myDb.close()
 if x == 'ID Not Found.':
     error_page = """<!DOCTYPE html>
@@ -66,7 +58,6 @@ if x == 'ID Not Found.':
         <div class="tab-content">
         <div id="search">
         <h1>Refugee Not Found</h1>
-        
         <form action="search.py" method="post">
         
         <div class="top-row">
@@ -86,7 +77,6 @@ if x == 'ID Not Found.':
         </div>
         
         <div class="bottom-row">
-        
         <div class="field-wrap">
         <label>
         DOB (yyyy/mm/dd)<span class="req">*</span>
@@ -110,14 +100,12 @@ if x == 'ID Not Found.':
         </div>
         
         </div><!-- tab-content -->
-        
         </div> <!-- /form -->
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
         
         <script  src="../js/index.js"></script>
-        
         </body>
         </html> """
-            print error_page
+    print error_page
 else:
     print x
