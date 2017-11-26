@@ -7,14 +7,12 @@
   width: 100%;
 }
 
-img:not(.mainLogo) {
+.altLogo {
   float: right;
   height: 75px;
-  width: 150px;
+  width: 100%;
   position: absolute;
-  padding-bottom: 0px;
-  padding-left: 25px;
-  padding-right: 45px;
+  padding-bottom: 15px;
 }
 
 html {
