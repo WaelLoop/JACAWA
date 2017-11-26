@@ -39,13 +39,14 @@ position = None
 #Accumulator
 x = "ID Not Found."
 #Reads through the csv file to find the refugee.
-with open ("./%s.csv, year",'rb') as myDb:
+file_name = year + ".csv"
+with open (file_name,'rb') as myDb:
     reader = csv.reader(myDb, delimiter = ',')
     for row in reader:
         if ID == row[0]:
             x = row
-                position = counter
-        counter = counter + 1
+            position = counter
+            counter = counter + 1
 myDb.close()
 if x == 'ID Not Found.':
     error_page = """<!DOCTYPE html>
