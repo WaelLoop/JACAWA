@@ -1,27 +1,29 @@
 import cgi
 import csv
+import requests
+import json
+from idgen import IDgenerator
 
 form = cgi.FieldStorage()
 
 dob = form["DOB"].value
-fname = form["fname"].value
-lname = form["lname"].value
+fName = form["fname"].value
+lName = form["lname"].value
+healthStatus = form["healthStatus"].value
 
-def IDgenerator(dob, fname, lname):
-    dob = dob.split("/")    
-    dob[0] = dob[0][2:]
-    fname = list(fname)
-    lname = list(lname)
-    ID = dob[2] + dob[1] + dob[0] + str(ord(fname[0])-97) + str(ord(fname[1])-97) + str(ord(fname[2])-97) + str(ord(lname[0])-97) + str(ord(lname[1])-97) + str(ord(lname[2])-97)  
-    return ID
+id = IDgenerator(dob, fName, lName)
 
-def addNewEntry(id, dob, firstName, lastName, location ,healthStatus):
+def addNewEntry(id, dob, fName, lName, healthStatus):
+    send_url = 'http://freegeoip.net/json'
+    r = requests.get(send_url)
+    j = json.loads(r.text)
+    city = j['city']
+    
     if int(id[:2]) < 20:
         filename = '../data/20'+id[:2]+".csv"
     else:
         filename = '../data/19'+id[:2]+".csv"
     f = open(filename, "a+")
-    f.write(id + ", " + dob + ", "+firstName + ", "+ lastName + ", " + location + ", " + healthStatus +"\n")
+    f.write(id + ", " + dob + ", "+fName + ", "+ lName + ", " + city + ", " + healthStatus +"\n")
     f.close()
     return
-
