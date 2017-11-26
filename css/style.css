@@ -2,6 +2,21 @@
   box-sizing: border-box;
 }
 
+.mainLogo {
+  height: 270px;
+  width: 100%;
+}
+
+img:not(.mainLogo) {
+  float: right;
+  height: 75px;
+  width: 150px;
+  position: absolute;
+  padding-bottom: 0px;
+  padding-left: 25px;
+  padding-right: 45px;
+}
+
 html {
   overflow-y: scroll;
 }
@@ -27,13 +42,21 @@ a:hover {
   max-width: 600px;
   margin: 40px auto;
   border-radius: 4px;
-  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+
+.formBasic {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 40px;
+  max-width: 600px;
+  margin: 40px auto;
+  margin-top: 0px;
+  padding-top: 0px;
+  border-radius: 4px;
 }
 
 .tab-group {
   list-style: none;
   padding: 0;
-  margin: 0 0 40px 0;
 }
 .tab-group:after {
   content: "";
@@ -72,6 +95,7 @@ h1 {
   color: #ffffff;
   font-weight: 300;
   margin: 0 0 40px;
+  padding-top: 20px;
 }
 
 label {
